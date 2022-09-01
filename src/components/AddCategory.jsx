@@ -1,20 +1,26 @@
 import { useState, useSyncExternalStore } from 'react'
 
-export const AddCategory = () => {
+export const AddCategory = ({ onNewCategory }) => {
   const [inputValue, setInputValue] = useState('')
 
   const onInputChange = (e) => setInputValue(e.target.value)
 
-  const submit = (e) => e.preventDefault()
+  const onsubmit = (e) => {
+    const newInputValue = inputValue.trim()
+    e.preventDefault()
+    if(newInputValue.length <= 1) return;
+    onNewCategory(newInputValue)
+    setInputValue('')
+  }
 
   return (
-    <form onSubmit={(e) => submit(e)}>
+    <form onSubmit={ onsubmit }>
         <input
-        type='text'
-        placeholder='Search gif'
-        className='form-control rounded-0 border-0 my-3'
-        value={ inputValue }
-        onChange={ onInputChange }
+            type='text'
+            placeholder='Search gif'
+            className='form-control rounded-0 border-0 my-3'
+            value={ inputValue }
+            onChange={ onInputChange }
         />
     </form>
   )
