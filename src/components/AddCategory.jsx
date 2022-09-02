@@ -18,7 +18,7 @@ export const AddCategory = ({ onNewCategory }) => {
         <input
             type='text'
             placeholder='Search gif'
-            className='form-control rounded-0 border-0 my-3'
+            className='form-control rounded-0 border-0 my-3 p-2 w-75 m-auto text-center '
             value={ inputValue }
             onChange={ onInputChange }
         />
