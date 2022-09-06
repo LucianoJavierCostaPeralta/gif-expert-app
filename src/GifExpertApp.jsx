@@ -14,6 +14,7 @@ export const GifExpertApp = () => {
 
   return (
     <div className="container-fluid ">
+
       <TitleApp title='Gif Expert App'/>
 
       <AddCategory onNewCategory={ onAddCategory }/>

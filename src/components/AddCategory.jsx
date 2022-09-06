@@ -1,4 +1,4 @@
-import { useState, useSyncExternalStore } from 'react'
+import { useState } from 'react'
 
 export const AddCategory = ({ onNewCategory }) => {
   const [inputValue, setInputValue] = useState('')
